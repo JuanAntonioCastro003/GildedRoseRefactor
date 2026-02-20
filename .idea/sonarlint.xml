@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SonarLintProjectSettings">
     <option name="bindingEnabled" value="true" />
-    <option name="projectKey" value="kata-rose" />
-    <option name="serverId" value="local" />
+    <option name="projectKey" value="GildedRoseJuanAntonio" />
+    <option name="serverId" value="servidor" />
   </component>
 </project>
