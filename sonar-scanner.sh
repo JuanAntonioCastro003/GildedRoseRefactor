@@ -11,7 +11,7 @@ else
 fi
 
 # Validaciones mínimas
-if [ -z "$SONAR_PROJECT_KEY" ] || [ -z "$SONAR_TOKEN" ]; then
+if [ -z "$SONAR_PROJECT_KEY" ] || [ -z "$SONAR_TOKEN"  || [ -z "$SONAR_SERVER" ]; then
   echo "Faltan variables obligatorias en .env"
   exit 1
 fi
@@ -19,7 +19,7 @@ fi
 
 docker run --rm \
   --network "sonarqube-net" \
-  -e SONAR_HOST_URL="http://sonarqube:9000" \
+  -e SONAR_HOST_URL="http://${SONAR_SERVER}" \
   -e SONAR_TOKEN="${SONAR_TOKEN}" \
   -v "$(pwd):/usr/src" \
   sonarsource/sonar-scanner-cli \
